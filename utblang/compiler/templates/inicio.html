@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lenguaje UTB</title>
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+
+    {# Load CSS and JavaScript #}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
+</head>
+<body>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Lenguaje UTB</a>
+        </div>
+        <ul class="nav navbar-nav">
+            {% if has_form %}
+          <li class="active"><a href="/inicio/">Inicio</a></li>
+            {% else %}
+          <li class="active"><a href="/inicio/">Inicio</a></li>
+            {% endif %}
+          <li><a href="#">Documentación</a></li>
+        </ul>
+      </div>
+    </nav>
+    {% if has_form %}
+        <div class="well well-sm">
+            <h1>Bienvenido a Lenguaje UTB</h1>
+            <p>El lenguaje de programación UTB es un lenguaje compilado (a ensamblador MIPS) que
+            está pensado para ser fácil de entender para personas con poca o ninguna experiencia en la programación.
+            Posee las estructuras de datos básicas como listas, matrices y
+            variables de tipo entero, real, cadenas y booleanos.</p>
+            <p>Cada estructura de control tiene su propio indicador de cierre, a diferencia de lenguajes como C++ o Java
+            que usan el mismo para todas. Por ejemplo, la sintaxis del condicional si es la siguiente:</p>
+            <code style="white-space:pre-wrap">
+si $a es_mayor_que $b entonces
+    cambiar_valor_a $a por 12
+fin_si
+            </code>
+        </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Compila tu código con nuestro compilador online
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <form action="{{ ruta }}" method="POST">{% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-default">Compilar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% if err %}
+            <div class="panel panel-danger">
+            <div class="panel-heading">Compilación fallida</div>
+        {% else %}
+            <div class="panel panel-primary">
+            <div class="panel-heading">Su código</div>
+        {% endif %}
+            <div class="panel-body">
+                <samp style="white-space:pre">
+                    {% for linea in salida %}
+{{ linea }}
+                    {% endfor %}
+                </samp>
+            </div>
+        </div>
+    {% endif %}
+</body>
+</html>

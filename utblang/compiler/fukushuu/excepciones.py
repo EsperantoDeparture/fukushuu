@@ -1,0 +1,2 @@
+class ExceptionFound(Exception):
+    pass
