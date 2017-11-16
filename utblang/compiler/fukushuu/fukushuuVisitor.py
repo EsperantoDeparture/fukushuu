@@ -551,7 +551,10 @@ class fukushuuVisitor(ParseTreeVisitor):
                     self.output += "mul $t8, $t8, $t0\n"  # fila * #columnas
 
                     # Obtenemos el valor de la columna
-                    self.visitOperaciones(ctx.columna)
+                    columna = self.visitOperaciones(ctx.columna)
+                    if columna != int:
+                        raise ExceptionFound(
+                            "La columna de la matriz debe ser un valor entero")  # La columna debe ser entera
 
                     self.output += "add $t8, $t8, $t0\n"  # fila * #columnas + columna
                     self.output += "sll $t8, $t8, 2\n"  # 4 * (fila * #columnas + columna) = offset
@@ -575,7 +578,10 @@ class fukushuuVisitor(ParseTreeVisitor):
                     self.output += "mul $t8, $t8, $t0\n"  # fila * #columnas
 
                     # Obtenemos el valor de la columna
-                    self.visitOperaciones(ctx.columna)
+                    columna = self.visitOperaciones(ctx.columna)
+                    if columna != int:
+                        raise ExceptionFound(
+                            "La columna de la matriz debe ser un valor entero")  # La columna debe ser entera
 
                     self.output += "add $t8, $t8, $t0\n"  # fila * #columnas + columna
                     self.output += "sll $t8, $t8, 2\n"  # 4 * (fila * #columnas + columna) = offset
@@ -597,8 +603,10 @@ class fukushuuVisitor(ParseTreeVisitor):
                     self.output += ("addi $t8, $zero, " + str(self.symbolTable[ctx.id2.text].columnas) + "\n")
                     self.output += "mul $t8, $t8, $t0\n"  # fila * #columnas
 
-                    # Obtenemos el valor de la columna
-                    self.visitOperaciones(ctx.columna)
+                    columna = self.visitOperaciones(ctx.columna)
+                    if columna != int:
+                        raise ExceptionFound(
+                            "La columna de la matriz debe ser un valor entero")  # La columna debe ser entera
 
                     self.output += "add $t8, $t8, $t0\n"  # fila * #columnas + columna
                     self.output += "sll $t8, $t8, 2\n"  # 4 * (fila * #columnas + columna) = offset
@@ -621,7 +629,10 @@ class fukushuuVisitor(ParseTreeVisitor):
                     self.output += "mul $t8, $t8, $t0\n"  # fila * #columnas
 
                     # Obtenemos el valor de la columna
-                    self.visitOperaciones(ctx.columna)
+                    columna = self.visitOperaciones(ctx.columna)
+                    if columna != int:
+                        raise ExceptionFound(
+                            "La columna de la matriz debe ser un valor entero")  # La columna debe ser entera
 
                     self.output += "add $t8, $t8, $t0\n"  # fila * #columnas + columna
                     self.output += "sll $t8, $t8, 2\n"  # 4 * (fila * #columnas + columna) = offset
@@ -1178,19 +1189,13 @@ class fukushuuVisitor(ParseTreeVisitor):
     def visitPara_cada_elemento(self, ctx: fukushuuParser.Para_cada_elementoContext):
         if ctx.nombre is not None:  # Foreach
             # TODO verificar que no se esté iterando sobre una lista vacía
-
+            _for = self.forin_ctr
+            _end = self.end_ctr
+            self.forin_ctr += 1
+            self.end_ctr += 1
+            
             if ctx.nombre.text in self.symbolTable.keys():
-                if ctx.temp.text in self.symbolTable.keys():  # La variable existe
-                    raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # Dudo que el usuario quiera que sobreescriban su variable en un foreach
-                else:  # La variable no existe, hay que crearla
-                    self.output += ".data\n"
-
-                    _for = self.forin_ctr
-                    _end = self.end_ctr
-                    self.forin_ctr += 1
-                    self.end_ctr += 1
-
+                if ctx.temp.text not in self.symbolTable.keys():  # La variable existe
                     # Ahora creamos una variable que contendrá el índice con el que iteraremos sobre la lista
                     self.output += ("__idx" + str(_for) + ": .word 0\n")
                     if self.symbolTable[ctx.nombre.text].tipo == "lista_de_entero":
@@ -1224,30 +1229,30 @@ class fukushuuVisitor(ParseTreeVisitor):
                         self.output += ("lw $t7, " + ctx.nombre.text + "\n")
                         self.output += ("sw $t7, " + ctx.temp.text + "\n")
 
-                    self.output += ("__for" + str(_for) + ":\n")
-                    self.output += ("lw $t7, __idx" + str(_for) + "\n")  # Cargamos el índice actual
-                    self.output += ("lw $t8, __" + ctx.nombre.text + "_tam\n")  # Cargamos el tamaño del arreglo
-                    self.output += (
-                        "beq $t7, $t8, __end" + str(_end) + "\n")  # Ya el índice es igual al tamaño del arreglo?
+                self.output += ("__for" + str(_for) + ":\n")
+                self.output += ("lw $t7, __idx" + str(_for) + "\n")  # Cargamos el índice actual
+                self.output += ("lw $t8, __" + ctx.nombre.text + "_tam\n")  # Cargamos el tamaño del arreglo
+                self.output += (
+                    "beq $t7, $t8, __end" + str(_end) + "\n")  # Ya el índice es igual al tamaño del arreglo?
 
-                    self.output += ("la $t7, " + ctx.nombre.text + "\n")  # Cargamos la dirección del arreglo
-                    self.output += ("lw $t8, __idx" + str(_for) + "\n")  # Cargamos el índice actual
-                    self.output += "sll $t8, $t8, 2\n"  # Multiplicamos por cuatro el índice para tener la posición en memoria
-                    self.output += "add $t7, $t7, $t8\n"  # Sumamos el offset a la dirección del arreglo
-                    self.output += "lw $t7, ($t7)\n"  # Cargamos el elemento del arreglo
-                    self.output += (
-                        "sw $t7, " + ctx.temp.text + "\n")  # Actualizamos el valor de la variable que itera sobre el arreglo
+                self.output += ("la $t7, " + ctx.nombre.text + "\n")  # Cargamos la dirección del arreglo
+                self.output += ("lw $t8, __idx" + str(_for) + "\n")  # Cargamos el índice actual
+                self.output += "sll $t8, $t8, 2\n"  # Multiplicamos por cuatro el índice para tener la posición en memoria
+                self.output += "add $t7, $t7, $t8\n"  # Sumamos el offset a la dirección del arreglo
+                self.output += "lw $t7, ($t7)\n"  # Cargamos el elemento del arreglo
+                self.output += (
+                    "sw $t7, " + ctx.temp.text + "\n")  # Actualizamos el valor de la variable que itera sobre el arreglo
 
-                    self.visitChildren(ctx.com)
+                self.visitChildren(ctx.com)
 
-                    self.output += ("lw $t7, __idx" + str(_for) + "\n")  # Cargamos el índice actual
-                    self.output += "addi $t7, $t7, 1\n"  # Sumamos 1 al índice
-                    self.output += ("sw $t7, __idx" + str(_for) + "\n")  # Actualizamos la variable índice
-                    self.output += ("j __for" + str(_for) + "\n")
-                    self.output += ("__end" + str(_end) + ":\n")
+                self.output += ("lw $t7, __idx" + str(_for) + "\n")  # Cargamos el índice actual
+                self.output += "addi $t7, $t7, 1\n"  # Sumamos 1 al índice
+                self.output += ("sw $t7, __idx" + str(_for) + "\n")  # Actualizamos la variable índice
+                self.output += ("j __for" + str(_for) + "\n")
+                self.output += ("__end" + str(_end) + ":\n")
             else:
 
-                raise ExceptionFound("Una excepción no controlada ha ocurrido, revise su código")  # La lista no existe
+                raise ExceptionFound("{0} no está definido".format(ctx.nombre.text))  # La lista no existe
 
         else:  # For in
             # TODO evitar que el usuario pueda modificar la variable de flujo
@@ -1407,7 +1412,7 @@ class fukushuuVisitor(ParseTreeVisitor):
                 self.output += "srl $t1, $t1, 2\n"  # Dividimos $t1 por cuatro
                 self.output += "addi $t1, $t1, 1\n"  # Incrementamos en 1 el tamaño de la lista
                 self.output += ("sw $t1, __" + ctx.nombre.text + "_tam\n")  # Actualizamos el tamaño de la lista
-            else:  # Lista de cadena
+            elif self.symbolTable[ctx.nombre.text].tipo == "lista_de_cadena":
                 # Como la operación fue evaluada los registros $t1 a $t6 están disponibles ($t0 no porque tiene el resultado)
                 self.output += ("lw $t1, __" + ctx.nombre.text + "_tam\n")  # Cargamos el tamaño de la lista en $t1
                 self.output += "sll $t1, $t1, 2\n"  # multiplicamos $t1 por 4
@@ -1419,9 +1424,10 @@ class fukushuuVisitor(ParseTreeVisitor):
                 self.output += "srl $t1, $t1, 2\n"  # Dividimos $t1 por cuatro
                 self.output += "addi $t1, $t1, 1\n"  # Incrementamos en 1 el tamaño de la lista
                 self.output += ("sw $t1, __" + ctx.nombre.text + "_tam\n")  # Actualizamos el tamaño de la lista
+            else:
+                raise ExceptionFound("{0} no es una lista".format(ctx.nombre.text))
         else:
-
-            raise ExceptionFound("Una excepción no controlada ha ocurrido, revise su código")  # La lista no existe
+            raise ExceptionFound("{0} no está definido".format(ctx.nombre.text))  # La lista no existe
 
     # Visit a parse tree produced by fukushuuParser#leer.
     def visitLeer(self, ctx: fukushuuParser.LeerContext):
@@ -1429,7 +1435,7 @@ class fukushuuVisitor(ParseTreeVisitor):
         # TODO comprobar dimensiones de las listas y matrices
         if ctx.nombre.text not in self.symbolTable.keys():
             raise ExceptionFound(
-                "Una excepción no controlada ha ocurrido, revise su código")  # La lista, matriz o variable no existe TODO poner en cada caso
+                "{0} no está definido".format(ctx.nombre.text))  # La lista, matriz o variable no existe TODO poner en cada caso
         if ctx.fila is not None:  # Leer matriz
             if self.symbolTable[ctx.nombre.text].tipo == "matriz_de_entero":
                 self.output += "li $v0, 5\n"  # Leemos un entero
@@ -1438,13 +1444,14 @@ class fukushuuVisitor(ParseTreeVisitor):
                 fila = self.visitOperaciones(ctx.fila)  # Calculamos la fila
                 if fila != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La fila debe ser un valor entero")  # La fila debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # Cargamos el valor de la fila en $t8
 
-                if fila != int:
+                columna = self.visitOperaciones(ctx.columna)
+                if columna != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La columna debe ser un valor entero")  # La columna debe ser un valor entero
 
                 self.output += "move $t9, $t0\n"  # Cargamos el valor de la columna en $t9
 
@@ -1465,13 +1472,14 @@ class fukushuuVisitor(ParseTreeVisitor):
                 fila = self.visitOperaciones(ctx.fila)  # Calculamos la fila
                 if fila != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La fila debe ser un valor entero")  # La fila debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # Cargamos el valor de la fila en $t8
 
-                if fila != int:
+                columna = self.visitOperaciones(ctx.columna)
+                if columna != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La columna debe ser un valor entero")  # La columna debe ser un valor entero
 
                 self.output += "move $t9, $t0\n"  # Cargamos el valor de la columna en $t9
 
@@ -1492,13 +1500,14 @@ class fukushuuVisitor(ParseTreeVisitor):
                 fila = self.visitOperaciones(ctx.fila)  # Calculamos la fila
                 if fila != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La fila debe ser un valor entero")  # La fila debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # Cargamos el valor de la fila en $t8
 
-                if fila != int:
+                columna = self.visitOperaciones(ctx.columna)
+                if columna != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La columna debe ser un valor entero")  # La columna debe ser un valor entero
 
                 self.output += "move $t9, $t0\n"  # Cargamos el valor de la columna en $t9
 
@@ -1525,14 +1534,14 @@ class fukushuuVisitor(ParseTreeVisitor):
                 fila = self.visitOperaciones(ctx.fila)  # Calculamos la fila
                 if fila != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La fila debe ser un valor entero
+                        "La fila debe ser un valor entero")  # La fila debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # Cargamos el valor de la fila en $t8
 
                 columna = self.visitOperaciones(ctx.columna)  # Calculamos la columna
                 if columna != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # La columna debe ser un valor entero
+                        "La columna debe ser un valor entero")  # La columna debe ser un valor entero
 
                 self.output += "move $t9, $t0\n"  # Cargamos el valor de la columna en $t9
 
@@ -1555,7 +1564,7 @@ class fukushuuVisitor(ParseTreeVisitor):
                 indice = self.visitOperaciones(ctx.indice)  # Calculamos el índice
                 if indice != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # El índice debe ser un valor entero
+                        "El índice de la lista debe ser entero")  # El índice debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # índice del arreglo
                 self.output += "sll $t8, $t8, 2\n"  # 4 * índice del arreglo (offset respecto a la dirección base)
@@ -1570,7 +1579,7 @@ class fukushuuVisitor(ParseTreeVisitor):
                 indice = self.visitOperaciones(ctx.indice)  # Calculamos el índice
                 if indice != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # El índice debe ser un valor entero
+                        "El índice de la lista debe ser entero")  # El índice debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # índice del arreglo
                 self.output += "sll $t8, $t8, 2\n"  # 4 * índice del arreglo (offset respecto a la dirección base)
@@ -1585,7 +1594,7 @@ class fukushuuVisitor(ParseTreeVisitor):
                 indice = self.visitOperaciones(ctx.indice)  # Calculamos el índice
                 if indice != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # El índice debe ser un valor entero
+                        "El índice de la lista debe ser entero")  # El índice debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # índice del arreglo
                 self.output += "sll $t8, $t8, 2\n"  # 4 * índice del arreglo (offset respecto a la dirección base)
@@ -1607,7 +1616,7 @@ class fukushuuVisitor(ParseTreeVisitor):
                 indice = self.visitOperaciones(ctx.indice)  # Calculamos el índice
                 if indice != int:
                     raise ExceptionFound(
-                        "Una excepción no controlada ha ocurrido, revise su código")  # El índice debe ser un valor entero
+                        "El índice de la lista debe ser entero")  # El índice debe ser un valor entero
 
                 self.output += "move $t8, $t0\n"  # índice del arreglo
                 self.output += "sll $t8, $t8, 2\n"  # 4 * índice del arreglo (offset respecto a la dirección base)
@@ -1682,7 +1691,7 @@ class fukushuuVisitor(ParseTreeVisitor):
         else:
 
             raise ExceptionFound(
-                "Una excepción no controlada ha ocurrido, revise su código")  # Tipo de dato incorrecto (se esperaba bool)
+                "El valor de la expresión del condicional si debe ser booleano")  # Tipo de dato incorrecto (se esperaba bool)
 
     # Visit a parse tree produced by fukushuuParser#mientras.
     def visitMientras(self, ctx: fukushuuParser.MientrasContext):
@@ -1707,7 +1716,7 @@ class fukushuuVisitor(ParseTreeVisitor):
         else:
 
             raise ExceptionFound(
-                "Una excepción no controlada ha ocurrido, revise su código")  # Tipo de dato incorrecto, el tipo debe ser bool
+                "El valor de la expresión de la estructura de control mientras debe ser booleano")  # Tipo de dato incorrecto, el tipo debe ser bool
 
     # Visit a parse tree produced by fukushuuParser#flujo.
     def visitFlujo(self, ctx: fukushuuParser.FlujoContext):

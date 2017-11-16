@@ -1,4 +1,4 @@
-# Generated from /home/zetsubou/Projects/Python/fukushuu/fukushuu.g4 by ANTLR 4.7
+# Generated from C:/Users/jesusdaniel/PycharmProjects/fukushuu/utblang/compiler/fukushuu\fukushuu.g4 by ANTLR 4.7
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -148,48 +148,48 @@ def serializedATN():
         return buf.getvalue()
 
 
-class fukushuuParser(Parser):
+class fukushuuParser ( Parser ):
 
     grammarFileName = "fukushuu.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
-    decisionsToDFA = [DFA(ds, i) for i, ds in enumerate(atn.decisionToState)]
+    decisionsToDFA = [ DFA(ds, i) for i, ds in enumerate(atn.decisionToState) ]
 
     sharedContextCache = PredictionContextCache()
 
-    literalNames = ["<INVALID>", "'a'", "'('", "','", "')'", "'en'", "'en_rango_de'",
-                    "'hasta'", "'x'", "'booleano'", "'cadena'", "'leer'",
-                    "<INVALID>", "'<-'", "'agregar_a'", "'%'", "'es_igual_que'",
-                    "'es_mayor_que'", "'es_menor_que'", "'es_mayor_o_igual_que'",
-                    "'es_menor_o_igual_que'", "'no_es_igual_a'", "'y'",
-                    "'o'", "'no'", "'convertir_a'", "'para_cada'", "'fin_para'",
-                    "':'", "'mientras'", "'fin_mientras'", "'si'", "'entonces'",
-                    "'fin_si'", "'sino'", "'de_tamano'", "'nombre'", "'lista_de_entero'",
-                    "'lista_de_real'", "'lista_de_booleano'", "'lista_de_cadena'",
-                    "'matriz_de_entero'", "'matriz_de_real'", "'matriz_de_cadena'",
-                    "'matriz_de_booleano'", "<INVALID>", "'en_la_posicion'",
-                    "'en_la_coordenada'", "'por'", "'cambiar_valor_a'",
-                    "'nombre_programa'", "'+'", "'-'", "'*'", "'/'", "'='",
-                    "'real'", "'entero'", "'tipo'", "'mostrar_en_pantalla'",
-                    "'variables'", "'fin_variables'", "'flujo'", "'fin_flujo'"]
+    literalNames = [ "<INVALID>", "'a'", "'('", "','", "')'", "'en'", "'en_rango_de'", 
+                     "'hasta'", "'x'", "'booleano'", "'cadena'", "'leer'", 
+                     "<INVALID>", "'<-'", "'agregar_a'", "'%'", "'es_igual_que'", 
+                     "'es_mayor_que'", "'es_menor_que'", "'es_mayor_o_igual_que'", 
+                     "'es_menor_o_igual_que'", "'no_es_igual_a'", "'y'", 
+                     "'o'", "'no'", "'convertir_a'", "'para_cada'", "'fin_para'", 
+                     "':'", "'mientras'", "'fin_mientras'", "'si'", "'entonces'", 
+                     "'fin_si'", "'sino'", "'de_tamano'", "'nombre'", "'lista_de_entero'", 
+                     "'lista_de_real'", "'lista_de_booleano'", "'lista_de_cadena'", 
+                     "'matriz_de_entero'", "'matriz_de_real'", "'matriz_de_cadena'", 
+                     "'matriz_de_booleano'", "<INVALID>", "'en_la_posicion'", 
+                     "'en_la_coordenada'", "'por'", "'cambiar_valor_a'", 
+                     "'nombre_programa'", "'+'", "'-'", "'*'", "'/'", "'='", 
+                     "'real'", "'entero'", "'tipo'", "'mostrar_en_pantalla'", 
+                     "'variables'", "'fin_variables'", "'flujo'", "'fin_flujo'" ]
 
-    symbolicNames = ["<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                     "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>",
-                     "<INVALID>", "TBOOLEANO", "TCADENA", "LEER", "COMENTARIOS",
-                     "AGREGAR_LISTA_OP", "AGREGAR_A", "MODULO", "IGUAL_QUE",
-                     "MAYOR_QUE", "MENOR_QUE", "MAYOR_IGUAL_QUE", "MENOR_IGUAL_QUE",
-                     "DESIGUALDAD", "YLOGICO", "OLOGICO", "NEGACION", "CONVERSION",
-                     "PARA", "FINPARA", "DPUNTOS", "MIENTRAS", "FINMIENTRAS",
-                     "SI", "ENTONCES", "FINSI", "SINO", "TAMANO", "NOMBRE",
-                     "LISTA_ENTERO", "LISTA_REAL", "LISTA_BOOL", "LISTA_CADENA",
-                     "MATRIZ_ENTERO", "MATRIZ_REAL", "MATRIZ_CADENA", "MATRIZ_BOOL",
-                     "BOOL", "EN_LA_POSICION", "EN_LA_COORDENADA", "POR",
-                     "CAMBIAR_VALOR_A", "NOMBRE_PROGRAMA", "SUM", "RES",
-                     "MUL", "DIV", "IGUAL", "TREAL", "TENTERO", "TIPO",
-                     "MOSTRAR", "INICIO_VARIABLES", "FIN_VARIABLES", "INICIO_FLUJO",
-                     "FIN_FLUJO", "INT", "ID_PROGRAMA", "ID", "FLOAT",
-                     "WS", "STRING"]
+    symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
+                      "<INVALID>", "TBOOLEANO", "TCADENA", "LEER", "COMENTARIOS", 
+                      "AGREGAR_LISTA_OP", "AGREGAR_A", "MODULO", "IGUAL_QUE", 
+                      "MAYOR_QUE", "MENOR_QUE", "MAYOR_IGUAL_QUE", "MENOR_IGUAL_QUE", 
+                      "DESIGUALDAD", "YLOGICO", "OLOGICO", "NEGACION", "CONVERSION", 
+                      "PARA", "FINPARA", "DPUNTOS", "MIENTRAS", "FINMIENTRAS", 
+                      "SI", "ENTONCES", "FINSI", "SINO", "TAMANO", "NOMBRE", 
+                      "LISTA_ENTERO", "LISTA_REAL", "LISTA_BOOL", "LISTA_CADENA", 
+                      "MATRIZ_ENTERO", "MATRIZ_REAL", "MATRIZ_CADENA", "MATRIZ_BOOL", 
+                      "BOOL", "EN_LA_POSICION", "EN_LA_COORDENADA", "POR", 
+                      "CAMBIAR_VALOR_A", "NOMBRE_PROGRAMA", "SUM", "RES", 
+                      "MUL", "DIV", "IGUAL", "TREAL", "TENTERO", "TIPO", 
+                      "MOSTRAR", "INICIO_VARIABLES", "FIN_VARIABLES", "INICIO_FLUJO", 
+                      "FIN_FLUJO", "INT", "ID_PROGRAMA", "ID", "FLOAT", 
+                      "WS", "STRING" ]
 
     RULE_operaciones = 0
     RULE_opAnd = 1
@@ -220,107 +220,110 @@ class fukushuuParser(Parser):
     RULE_inicio = 26
     RULE_start_rule = 27
 
-    ruleNames = ["operaciones", "opAnd", "igualdad", "desigualdad", "sumr",
-                 "op_div", "conversion", "obtenerValor", "atom", "mostrar",
-                 "asignacionLista", "asignacionMatriz", "asignacionID",
-                 "asignacion", "para_cada_elemento", "agregar_elemento_lista",
-                 "leer", "comandos", "sinotonces", "dummy_comandos", "si",
-                 "mientras", "flujo", "declaracion", "variables", "nombrePrograma",
-                 "inicio", "start_rule"]
+    ruleNames =  [ "operaciones", "opAnd", "igualdad", "desigualdad", "sumr", 
+                   "op_div", "conversion", "obtenerValor", "atom", "mostrar", 
+                   "asignacionLista", "asignacionMatriz", "asignacionID", 
+                   "asignacion", "para_cada_elemento", "agregar_elemento_lista", 
+                   "leer", "comandos", "sinotonces", "dummy_comandos", "si", 
+                   "mientras", "flujo", "declaracion", "variables", "nombrePrograma", 
+                   "inicio", "start_rule" ]
 
     EOF = Token.EOF
-    T__0 = 1
-    T__1 = 2
-    T__2 = 3
-    T__3 = 4
-    T__4 = 5
-    T__5 = 6
-    T__6 = 7
-    T__7 = 8
-    TBOOLEANO = 9
-    TCADENA = 10
-    LEER = 11
-    COMENTARIOS = 12
-    AGREGAR_LISTA_OP = 13
-    AGREGAR_A = 14
-    MODULO = 15
-    IGUAL_QUE = 16
-    MAYOR_QUE = 17
-    MENOR_QUE = 18
-    MAYOR_IGUAL_QUE = 19
-    MENOR_IGUAL_QUE = 20
-    DESIGUALDAD = 21
-    YLOGICO = 22
-    OLOGICO = 23
-    NEGACION = 24
-    CONVERSION = 25
-    PARA = 26
-    FINPARA = 27
-    DPUNTOS = 28
-    MIENTRAS = 29
-    FINMIENTRAS = 30
-    SI = 31
-    ENTONCES = 32
-    FINSI = 33
-    SINO = 34
-    TAMANO = 35
-    NOMBRE = 36
-    LISTA_ENTERO = 37
-    LISTA_REAL = 38
-    LISTA_BOOL = 39
-    LISTA_CADENA = 40
-    MATRIZ_ENTERO = 41
-    MATRIZ_REAL = 42
-    MATRIZ_CADENA = 43
-    MATRIZ_BOOL = 44
-    BOOL = 45
-    EN_LA_POSICION = 46
-    EN_LA_COORDENADA = 47
-    POR = 48
-    CAMBIAR_VALOR_A = 49
-    NOMBRE_PROGRAMA = 50
-    SUM = 51
-    RES = 52
-    MUL = 53
-    DIV = 54
-    IGUAL = 55
-    TREAL = 56
-    TENTERO = 57
-    TIPO = 58
-    MOSTRAR = 59
-    INICIO_VARIABLES = 60
-    FIN_VARIABLES = 61
-    INICIO_FLUJO = 62
-    FIN_FLUJO = 63
-    INT = 64
-    ID_PROGRAMA = 65
-    ID = 66
-    FLOAT = 67
-    WS = 68
-    STRING = 69
+    T__0=1
+    T__1=2
+    T__2=3
+    T__3=4
+    T__4=5
+    T__5=6
+    T__6=7
+    T__7=8
+    TBOOLEANO=9
+    TCADENA=10
+    LEER=11
+    COMENTARIOS=12
+    AGREGAR_LISTA_OP=13
+    AGREGAR_A=14
+    MODULO=15
+    IGUAL_QUE=16
+    MAYOR_QUE=17
+    MENOR_QUE=18
+    MAYOR_IGUAL_QUE=19
+    MENOR_IGUAL_QUE=20
+    DESIGUALDAD=21
+    YLOGICO=22
+    OLOGICO=23
+    NEGACION=24
+    CONVERSION=25
+    PARA=26
+    FINPARA=27
+    DPUNTOS=28
+    MIENTRAS=29
+    FINMIENTRAS=30
+    SI=31
+    ENTONCES=32
+    FINSI=33
+    SINO=34
+    TAMANO=35
+    NOMBRE=36
+    LISTA_ENTERO=37
+    LISTA_REAL=38
+    LISTA_BOOL=39
+    LISTA_CADENA=40
+    MATRIZ_ENTERO=41
+    MATRIZ_REAL=42
+    MATRIZ_CADENA=43
+    MATRIZ_BOOL=44
+    BOOL=45
+    EN_LA_POSICION=46
+    EN_LA_COORDENADA=47
+    POR=48
+    CAMBIAR_VALOR_A=49
+    NOMBRE_PROGRAMA=50
+    SUM=51
+    RES=52
+    MUL=53
+    DIV=54
+    IGUAL=55
+    TREAL=56
+    TENTERO=57
+    TIPO=58
+    MOSTRAR=59
+    INICIO_VARIABLES=60
+    FIN_VARIABLES=61
+    INICIO_FLUJO=62
+    FIN_FLUJO=63
+    INT=64
+    ID_PROGRAMA=65
+    ID=66
+    FLOAT=67
+    WS=68
+    STRING=69
 
-    def __init__(self, input: TokenStream, output: TextIO = sys.stdout):
+    def __init__(self, input:TokenStream, output:TextIO = sys.stdout):
         super().__init__(input, output)
         self.checkVersion("4.7")
         self._interp = ParserATNSimulator(self, self.atn, self.decisionsToDFA, self.sharedContextCache)
         self._predicates = None
 
+
+
     class OperacionesContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # OpAndContext
-            self.operacion = None  # Token
-            self.b = None  # OpAndContext
+            self.a = None # OpAndContext
+            self.operacion = None # Token
+            self.b = None # OpAndContext
 
-        def opAnd(self, i: int = None):
+        def opAnd(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OpAndContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OpAndContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OpAndContext,i)
 
-        def OLOGICO(self, i: int = None):
+
+        def OLOGICO(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.OLOGICO)
             else:
@@ -329,11 +332,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_operaciones
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitOperaciones"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOperaciones" ):
                 return visitor.visitOperaciones(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def operaciones(self):
 
@@ -345,16 +351,16 @@ class fukushuuParser(Parser):
             localctx.a = self.opAnd()
             self.state = 61
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 0, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 57
                     localctx.operacion = self.match(fukushuuParser.OLOGICO)
                     self.state = 58
                     localctx.b = self.opAnd() 
                 self.state = 63
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 0, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,0,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -366,20 +372,21 @@ class fukushuuParser(Parser):
 
     class OpAndContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # IgualdadContext
-            self.operacion = None  # Token
-            self.b = None  # IgualdadContext
+            self.a = None # IgualdadContext
+            self.operacion = None # Token
+            self.b = None # IgualdadContext
 
-        def igualdad(self, i: int = None):
+        def igualdad(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.IgualdadContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.IgualdadContext, i)
+                return self.getTypedRuleContext(fukushuuParser.IgualdadContext,i)
 
-        def YLOGICO(self, i: int = None):
+
+        def YLOGICO(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.YLOGICO)
             else:
@@ -388,11 +395,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_opAnd
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitOpAnd"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOpAnd" ):
                 return visitor.visitOpAnd(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def opAnd(self):
 
@@ -404,16 +414,16 @@ class fukushuuParser(Parser):
             localctx.a = self.igualdad()
             self.state = 69
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 1, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,1,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 65
                     localctx.operacion = self.match(fukushuuParser.YLOGICO)
                     self.state = 66
                     localctx.b = self.igualdad() 
                 self.state = 71
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 1, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,1,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -425,26 +435,27 @@ class fukushuuParser(Parser):
 
     class IgualdadContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # DesigualdadContext
-            self.operacion = None  # Token
-            self.b = None  # DesigualdadContext
+            self.a = None # DesigualdadContext
+            self.operacion = None # Token
+            self.b = None # DesigualdadContext
 
-        def desigualdad(self, i: int = None):
+        def desigualdad(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.DesigualdadContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.DesigualdadContext, i)
+                return self.getTypedRuleContext(fukushuuParser.DesigualdadContext,i)
 
-        def IGUAL_QUE(self, i: int = None):
+
+        def IGUAL_QUE(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.IGUAL_QUE)
             else:
                 return self.getToken(fukushuuParser.IGUAL_QUE, i)
 
-        def DESIGUALDAD(self, i: int = None):
+        def DESIGUALDAD(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.DESIGUALDAD)
             else:
@@ -453,30 +464,33 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_igualdad
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitIgualdad"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitIgualdad" ):
                 return visitor.visitIgualdad(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def igualdad(self):
 
         localctx = fukushuuParser.IgualdadContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_igualdad)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 72
             localctx.a = self.desigualdad()
             self.state = 77
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 2, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,2,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 73
                     localctx.operacion = self._input.LT(1)
                     _la = self._input.LA(1)
-                    if not (_la == fukushuuParser.IGUAL_QUE or _la == fukushuuParser.DESIGUALDAD):
+                    if not(_la==fukushuuParser.IGUAL_QUE or _la==fukushuuParser.DESIGUALDAD):
                         localctx.operacion = self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
@@ -485,7 +499,7 @@ class fukushuuParser(Parser):
                     localctx.b = self.desigualdad() 
                 self.state = 79
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 2, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,2,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -497,38 +511,39 @@ class fukushuuParser(Parser):
 
     class DesigualdadContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # SumrContext
-            self.operacion = None  # Token
-            self.b = None  # SumrContext
+            self.a = None # SumrContext
+            self.operacion = None # Token
+            self.b = None # SumrContext
 
-        def sumr(self, i: int = None):
+        def sumr(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.SumrContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.SumrContext, i)
+                return self.getTypedRuleContext(fukushuuParser.SumrContext,i)
 
-        def MENOR_QUE(self, i: int = None):
+
+        def MENOR_QUE(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MENOR_QUE)
             else:
                 return self.getToken(fukushuuParser.MENOR_QUE, i)
 
-        def MENOR_IGUAL_QUE(self, i: int = None):
+        def MENOR_IGUAL_QUE(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MENOR_IGUAL_QUE)
             else:
                 return self.getToken(fukushuuParser.MENOR_IGUAL_QUE, i)
 
-        def MAYOR_QUE(self, i: int = None):
+        def MAYOR_QUE(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MAYOR_QUE)
             else:
                 return self.getToken(fukushuuParser.MAYOR_QUE, i)
 
-        def MAYOR_IGUAL_QUE(self, i: int = None):
+        def MAYOR_IGUAL_QUE(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MAYOR_IGUAL_QUE)
             else:
@@ -537,32 +552,33 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_desigualdad
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitDesigualdad"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDesigualdad" ):
                 return visitor.visitDesigualdad(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def desigualdad(self):
 
         localctx = fukushuuParser.DesigualdadContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_desigualdad)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 80
             localctx.a = self.sumr()
             self.state = 85
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 3, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 81
                     localctx.operacion = self._input.LT(1)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                                (1 << fukushuuParser.MAYOR_QUE) | (1 << fukushuuParser.MENOR_QUE) | (
-                            1 << fukushuuParser.MAYOR_IGUAL_QUE) | (1 << fukushuuParser.MENOR_IGUAL_QUE))) != 0)):
+                    if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.MAYOR_QUE) | (1 << fukushuuParser.MENOR_QUE) | (1 << fukushuuParser.MAYOR_IGUAL_QUE) | (1 << fukushuuParser.MENOR_IGUAL_QUE))) != 0)):
                         localctx.operacion = self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
@@ -571,7 +587,7 @@ class fukushuuParser(Parser):
                     localctx.b = self.sumr() 
                 self.state = 87
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 3, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,3,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -583,26 +599,27 @@ class fukushuuParser(Parser):
 
     class SumrContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # Op_divContext
-            self.operacion = None  # Token
-            self.b = None  # Op_divContext
+            self.a = None # Op_divContext
+            self.operacion = None # Token
+            self.b = None # Op_divContext
 
-        def op_div(self, i: int = None):
+        def op_div(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.Op_divContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.Op_divContext, i)
+                return self.getTypedRuleContext(fukushuuParser.Op_divContext,i)
 
-        def SUM(self, i: int = None):
+
+        def SUM(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.SUM)
             else:
                 return self.getToken(fukushuuParser.SUM, i)
 
-        def RES(self, i: int = None):
+        def RES(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.RES)
             else:
@@ -611,30 +628,33 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_sumr
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitSumr"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSumr" ):
                 return visitor.visitSumr(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def sumr(self):
 
         localctx = fukushuuParser.SumrContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_sumr)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 88
             localctx.a = self.op_div()
             self.state = 93
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 4, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 89
                     localctx.operacion = self._input.LT(1)
                     _la = self._input.LA(1)
-                    if not (_la == fukushuuParser.SUM or _la == fukushuuParser.RES):
+                    if not(_la==fukushuuParser.SUM or _la==fukushuuParser.RES):
                         localctx.operacion = self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
@@ -643,7 +663,7 @@ class fukushuuParser(Parser):
                     localctx.b = self.op_div() 
                 self.state = 95
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 4, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,4,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -655,32 +675,33 @@ class fukushuuParser(Parser):
 
     class Op_divContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.a = None  # ConversionContext
-            self.operacion = None  # Token
-            self.b = None  # ConversionContext
+            self.a = None # ConversionContext
+            self.operacion = None # Token
+            self.b = None # ConversionContext
 
-        def conversion(self, i: int = None):
+        def conversion(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.ConversionContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.ConversionContext, i)
+                return self.getTypedRuleContext(fukushuuParser.ConversionContext,i)
 
-        def MUL(self, i: int = None):
+
+        def MUL(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MUL)
             else:
                 return self.getToken(fukushuuParser.MUL, i)
 
-        def DIV(self, i: int = None):
+        def DIV(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.DIV)
             else:
                 return self.getToken(fukushuuParser.DIV, i)
 
-        def MODULO(self, i: int = None):
+        def MODULO(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.MODULO)
             else:
@@ -689,32 +710,33 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_op_div
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitOp_div"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitOp_div" ):
                 return visitor.visitOp_div(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def op_div(self):
 
         localctx = fukushuuParser.Op_divContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_op_div)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 96
             localctx.a = self.conversion()
             self.state = 101
             self._errHandler.sync(self)
-            _alt = self._interp.adaptivePredict(self._input, 5, self._ctx)
-            while _alt != 2 and _alt != ATN.INVALID_ALT_NUMBER:
-                if _alt == 1:
+            _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
+            while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
+                if _alt==1:
                     self.state = 97
                     localctx.operacion = self._input.LT(1)
                     _la = self._input.LA(1)
-                    if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                            (1 << fukushuuParser.MODULO) | (1 << fukushuuParser.MUL) | (
-                        1 << fukushuuParser.DIV))) != 0)):
+                    if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.MODULO) | (1 << fukushuuParser.MUL) | (1 << fukushuuParser.DIV))) != 0)):
                         localctx.operacion = self._errHandler.recoverInline(self)
                     else:
                         self._errHandler.reportMatch(self)
@@ -723,7 +745,7 @@ class fukushuuParser(Parser):
                     localctx.b = self.conversion() 
                 self.state = 103
                 self._errHandler.sync(self)
-                _alt = self._interp.adaptivePredict(self._input, 5, self._ctx)
+                _alt = self._interp.adaptivePredict(self._input,5,self._ctx)
 
         except RecognitionException as re:
             localctx.exception = re
@@ -735,15 +757,15 @@ class fukushuuParser(Parser):
 
     class ConversionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.op = None  # Token
-            self.a = None  # AtomContext
-            self.m = None  # Token
+            self.op = None # Token
+            self.a = None # AtomContext
+            self.m = None # Token
 
         def atom(self):
-            return self.getTypedRuleContext(fukushuuParser.AtomContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.AtomContext,0)
 
 
         def NEGACION(self):
@@ -767,27 +789,30 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_conversion
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitConversion"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitConversion" ):
                 return visitor.visitConversion(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def conversion(self):
 
         localctx = fukushuuParser.ConversionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_conversion)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 105
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == fukushuuParser.NEGACION or _la == fukushuuParser.CONVERSION:
+            if _la==fukushuuParser.NEGACION or _la==fukushuuParser.CONVERSION:
                 self.state = 104
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not (_la == fukushuuParser.NEGACION or _la == fukushuuParser.CONVERSION):
+                if not(_la==fukushuuParser.NEGACION or _la==fukushuuParser.CONVERSION):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -798,16 +823,14 @@ class fukushuuParser(Parser):
             localctx.a = self.atom()
             self.state = 110
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 7, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,7,self._ctx)
             if la_ == 1:
                 self.state = 108
                 self.match(fukushuuParser.T__0)
                 self.state = 109
                 localctx.m = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                            (1 << fukushuuParser.TBOOLEANO) | (1 << fukushuuParser.TCADENA) | (
-                        1 << fukushuuParser.TREAL) | (1 << fukushuuParser.TENTERO))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.TBOOLEANO) | (1 << fukushuuParser.TCADENA) | (1 << fukushuuParser.TREAL) | (1 << fukushuuParser.TENTERO))) != 0)):
                     localctx.m = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -824,15 +847,15 @@ class fukushuuParser(Parser):
 
     class ObtenerValorContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.id3 = None  # Token
-            self.id1 = None  # Token
-            self.indice = None  # OperacionesContext
-            self.id2 = None  # Token
-            self.fila = None  # OperacionesContext
-            self.columna = None  # OperacionesContext
+            self.id3 = None # Token
+            self.id1 = None # Token
+            self.indice = None # OperacionesContext
+            self.id2 = None # Token
+            self.fila = None # OperacionesContext
+            self.columna = None # OperacionesContext
 
         def EN_LA_POSICION(self):
             return self.getToken(fukushuuParser.EN_LA_POSICION, 0)
@@ -843,21 +866,24 @@ class fukushuuParser(Parser):
         def ID(self):
             return self.getToken(fukushuuParser.ID, 0)
 
-        def operaciones(self, i: int = None):
+        def operaciones(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OperacionesContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OperacionesContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OperacionesContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_obtenerValor
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitObtenerValor"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitObtenerValor" ):
                 return visitor.visitObtenerValor(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def obtenerValor(self):
 
@@ -867,7 +893,7 @@ class fukushuuParser(Parser):
             self.enterOuterAlt(localctx, 1)
             self.state = 124
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 8, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
                 self.state = 112
                 localctx.id3 = self.match(fukushuuParser.ID)
@@ -910,16 +936,16 @@ class fukushuuParser(Parser):
 
     class AtomContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.r = None  # Token
-            self.i = None  # Token
-            self.f = None  # Token
-            self.var = None  # ObtenerValorContext
-            self.s = None  # Token
-            self.op = None  # OperacionesContext
-            self.b = None  # Token
+            self.r = None # Token
+            self.i = None # Token
+            self.f = None # Token
+            self.var = None # ObtenerValorContext
+            self.s = None # Token
+            self.op = None # OperacionesContext
+            self.b = None # Token
 
         def INT(self):
             return self.getToken(fukushuuParser.INT, 0)
@@ -928,14 +954,14 @@ class fukushuuParser(Parser):
             return self.getToken(fukushuuParser.FLOAT, 0)
 
         def obtenerValor(self):
-            return self.getTypedRuleContext(fukushuuParser.ObtenerValorContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.ObtenerValorContext,0)
 
 
         def STRING(self):
             return self.getToken(fukushuuParser.STRING, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def BOOL(self):
@@ -950,11 +976,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_atom
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAtom"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAtom" ):
                 return visitor.visitAtom(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def atom(self):
 
@@ -964,7 +993,7 @@ class fukushuuParser(Parser):
             self.enterOuterAlt(localctx, 1)
             self.state = 151
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 13, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,13,self._ctx)
             if la_ == 1:
                 self.state = 128
                 self._errHandler.sync(self)
@@ -1070,27 +1099,30 @@ class fukushuuParser(Parser):
 
     class MostrarContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.most = None  # Token
-            self.op = None  # OperacionesContext
+            self.most = None # Token
+            self.op = None # OperacionesContext
 
         def MOSTRAR(self):
             return self.getToken(fukushuuParser.MOSTRAR, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_mostrar
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitMostrar"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMostrar" ):
                 return visitor.visitMostrar(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def mostrar(self):
 
@@ -1112,13 +1144,13 @@ class fukushuuParser(Parser):
 
     class AsignacionListaContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.lista = None  # Token
-            self.indice = None  # OperacionesContext
-            self.err = None  # Token
-            self.op = None  # OperacionesContext
+            self.lista = None # Token
+            self.indice = None # OperacionesContext
+            self.err = None # Token
+            self.op = None # OperacionesContext
 
         def CAMBIAR_VALOR_A(self):
             return self.getToken(fukushuuParser.CAMBIAR_VALOR_A, 0)
@@ -1129,11 +1161,11 @@ class fukushuuParser(Parser):
         def ID(self):
             return self.getToken(fukushuuParser.ID, 0)
 
-        def operaciones(self, i: int = None):
+        def operaciones(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OperacionesContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OperacionesContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OperacionesContext,i)
 
 
         def POR(self):
@@ -1142,11 +1174,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_asignacionLista
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAsignacionLista"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsignacionLista" ):
                 return visitor.visitAsignacionLista(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def asignacionLista(self):
 
@@ -1176,14 +1211,14 @@ class fukushuuParser(Parser):
 
     class AsignacionMatrizContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.matriz = None  # Token
-            self.fila = None  # OperacionesContext
-            self.columna = None  # OperacionesContext
-            self.err = None  # Token
-            self.op = None  # OperacionesContext
+            self.matriz = None # Token
+            self.fila = None # OperacionesContext
+            self.columna = None # OperacionesContext
+            self.err = None # Token
+            self.op = None # OperacionesContext
 
         def CAMBIAR_VALOR_A(self):
             return self.getToken(fukushuuParser.CAMBIAR_VALOR_A, 0)
@@ -1194,11 +1229,11 @@ class fukushuuParser(Parser):
         def ID(self):
             return self.getToken(fukushuuParser.ID, 0)
 
-        def operaciones(self, i: int = None):
+        def operaciones(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OperacionesContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OperacionesContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OperacionesContext,i)
 
 
         def POR(self):
@@ -1207,11 +1242,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_asignacionMatriz
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAsignacionMatriz"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsignacionMatriz" ):
                 return visitor.visitAsignacionMatriz(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def asignacionMatriz(self):
 
@@ -1249,12 +1287,12 @@ class fukushuuParser(Parser):
 
     class AsignacionIDContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.nombre = None  # Token
-            self.err = None  # Token
-            self.op = None  # OperacionesContext
+            self.nombre = None # Token
+            self.err = None # Token
+            self.op = None # OperacionesContext
 
         def CAMBIAR_VALOR_A(self):
             return self.getToken(fukushuuParser.CAMBIAR_VALOR_A, 0)
@@ -1266,17 +1304,20 @@ class fukushuuParser(Parser):
             return self.getToken(fukushuuParser.POR, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_asignacionID
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAsignacionID"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsignacionID" ):
                 return visitor.visitAsignacionID(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def asignacionID(self):
 
@@ -1302,30 +1343,33 @@ class fukushuuParser(Parser):
 
     class AsignacionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def asignacionLista(self):
-            return self.getTypedRuleContext(fukushuuParser.AsignacionListaContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.AsignacionListaContext,0)
 
 
         def asignacionMatriz(self):
-            return self.getTypedRuleContext(fukushuuParser.AsignacionMatrizContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.AsignacionMatrizContext,0)
 
 
         def asignacionID(self):
-            return self.getTypedRuleContext(fukushuuParser.AsignacionIDContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.AsignacionIDContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_asignacion
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAsignacion"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAsignacion" ):
                 return visitor.visitAsignacion(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def asignacion(self):
 
@@ -1334,7 +1378,7 @@ class fukushuuParser(Parser):
         try:
             self.state = 182
             self._errHandler.sync(self)
-            la_ = self._interp.adaptivePredict(self._input, 14, self._ctx)
+            la_ = self._interp.adaptivePredict(self._input,14,self._ctx)
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 179
@@ -1364,14 +1408,14 @@ class fukushuuParser(Parser):
 
     class Para_cada_elementoContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.temp = None  # Token
-            self.nombre = None  # Token
-            self.a = None  # OperacionesContext
-            self.b = None  # OperacionesContext
-            self.com = None  # Dummy_comandosContext
+            self.temp = None # Token
+            self.nombre = None # Token
+            self.a = None # OperacionesContext
+            self.b = None # OperacionesContext
+            self.com = None # Dummy_comandosContext
 
         def PARA(self):
             return self.getToken(fukushuuParser.PARA, 0)
@@ -1382,30 +1426,34 @@ class fukushuuParser(Parser):
         def FINPARA(self):
             return self.getToken(fukushuuParser.FINPARA, 0)
 
-        def ID(self, i: int = None):
+        def ID(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.ID)
             else:
                 return self.getToken(fukushuuParser.ID, i)
 
         def dummy_comandos(self):
-            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext,0)
 
-        def operaciones(self, i: int = None):
+
+        def operaciones(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OperacionesContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OperacionesContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OperacionesContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_para_cada_elemento
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitPara_cada_elemento"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitPara_cada_elemento" ):
                 return visitor.visitPara_cada_elemento(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def para_cada_elemento(self):
 
@@ -1455,11 +1503,11 @@ class fukushuuParser(Parser):
 
     class Agregar_elemento_listaContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.nombre = None  # Token
-            self.op = None  # OperacionesContext
+            self.nombre = None # Token
+            self.op = None # OperacionesContext
 
         def AGREGAR_A(self):
             return self.getToken(fukushuuParser.AGREGAR_A, 0)
@@ -1471,17 +1519,20 @@ class fukushuuParser(Parser):
             return self.getToken(fukushuuParser.ID, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_agregar_elemento_lista
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitAgregar_elemento_lista"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitAgregar_elemento_lista" ):
                 return visitor.visitAgregar_elemento_lista(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def agregar_elemento_lista(self):
 
@@ -1507,13 +1558,13 @@ class fukushuuParser(Parser):
 
     class LeerContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.nombre = None  # Token
-            self.fila = None  # OperacionesContext
-            self.columna = None  # OperacionesContext
-            self.indice = None  # OperacionesContext
+            self.nombre = None # Token
+            self.fila = None # OperacionesContext
+            self.columna = None # OperacionesContext
+            self.indice = None # OperacionesContext
 
         def LEER(self):
             return self.getToken(fukushuuParser.LEER, 0)
@@ -1527,21 +1578,24 @@ class fukushuuParser(Parser):
         def EN_LA_POSICION(self):
             return self.getToken(fukushuuParser.EN_LA_POSICION, 0)
 
-        def operaciones(self, i: int = None):
+        def operaciones(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.OperacionesContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.OperacionesContext, i)
+                return self.getTypedRuleContext(fukushuuParser.OperacionesContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_leer
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitLeer"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitLeer" ):
                 return visitor.visitLeer(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def leer(self):
 
@@ -1576,10 +1630,7 @@ class fukushuuParser(Parser):
                 self.state = 214
                 localctx.indice = self.operaciones()
                 pass
-            elif token in [fukushuuParser.LEER, fukushuuParser.AGREGAR_A, fukushuuParser.PARA, fukushuuParser.FINPARA,
-                           fukushuuParser.MIENTRAS, fukushuuParser.FINMIENTRAS, fukushuuParser.SI, fukushuuParser.FINSI,
-                           fukushuuParser.SINO, fukushuuParser.CAMBIAR_VALOR_A, fukushuuParser.MOSTRAR,
-                           fukushuuParser.FIN_FLUJO]:
+            elif token in [fukushuuParser.LEER, fukushuuParser.AGREGAR_A, fukushuuParser.PARA, fukushuuParser.FINPARA, fukushuuParser.MIENTRAS, fukushuuParser.FINMIENTRAS, fukushuuParser.SI, fukushuuParser.FINSI, fukushuuParser.SINO, fukushuuParser.CAMBIAR_VALOR_A, fukushuuParser.MOSTRAR, fukushuuParser.FIN_FLUJO]:
                 pass
             else:
                 pass
@@ -1593,46 +1644,49 @@ class fukushuuParser(Parser):
 
     class ComandosContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def leer(self):
-            return self.getTypedRuleContext(fukushuuParser.LeerContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.LeerContext,0)
 
 
         def mostrar(self):
-            return self.getTypedRuleContext(fukushuuParser.MostrarContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.MostrarContext,0)
 
 
         def mientras(self):
-            return self.getTypedRuleContext(fukushuuParser.MientrasContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.MientrasContext,0)
 
 
         def si(self):
-            return self.getTypedRuleContext(fukushuuParser.SiContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.SiContext,0)
 
 
         def para_cada_elemento(self):
-            return self.getTypedRuleContext(fukushuuParser.Para_cada_elementoContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.Para_cada_elementoContext,0)
 
 
         def asignacion(self):
-            return self.getTypedRuleContext(fukushuuParser.AsignacionContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.AsignacionContext,0)
 
 
         def agregar_elemento_lista(self):
-            return self.getTypedRuleContext(fukushuuParser.Agregar_elemento_listaContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.Agregar_elemento_listaContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_comandos
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitComandos"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitComandos" ):
                 return visitor.visitComandos(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def comandos(self):
 
@@ -1690,7 +1744,7 @@ class fukushuuParser(Parser):
 
     class SinotoncesContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1700,27 +1754,30 @@ class fukushuuParser(Parser):
         def ENTONCES(self):
             return self.getToken(fukushuuParser.ENTONCES, 0)
 
-        def comandos(self, i: int = None):
+        def comandos(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.ComandosContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.ComandosContext, i)
+                return self.getTypedRuleContext(fukushuuParser.ComandosContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_sinotonces
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitSinotonces"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSinotonces" ):
                 return visitor.visitSinotonces(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def sinotonces(self):
 
         localctx = fukushuuParser.SinotoncesContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_sinotonces)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 226
@@ -1736,11 +1793,7 @@ class fukushuuParser(Parser):
                 self.state = 231 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                                        (1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (
-                                    1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (
-                            1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (
-                    1 << fukushuuParser.MOSTRAR))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (1 << fukushuuParser.MOSTRAR))) != 0)):
                     break
 
         except RecognitionException as re:
@@ -1753,31 +1806,34 @@ class fukushuuParser(Parser):
 
     class Dummy_comandosContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
-        def comandos(self, i: int = None):
+        def comandos(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.ComandosContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.ComandosContext, i)
+                return self.getTypedRuleContext(fukushuuParser.ComandosContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_dummy_comandos
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitDummy_comandos"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDummy_comandos" ):
                 return visitor.visitDummy_comandos(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def dummy_comandos(self):
 
         localctx = fukushuuParser.Dummy_comandosContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_dummy_comandos)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 234 
@@ -1789,11 +1845,7 @@ class fukushuuParser(Parser):
                 self.state = 236 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                                        (1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (
-                                    1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (
-                            1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (
-                    1 << fukushuuParser.MOSTRAR))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (1 << fukushuuParser.MOSTRAR))) != 0)):
                     break
 
         except RecognitionException as re:
@@ -1806,13 +1858,13 @@ class fukushuuParser(Parser):
 
     class SiContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.err = None  # Token
-            self.op = None  # OperacionesContext
-            self.com = None  # Dummy_comandosContext
-            self.el = None  # SinotoncesContext
+            self.err = None # Token
+            self.op = None # OperacionesContext
+            self.com = None # Dummy_comandosContext
+            self.el = None # SinotoncesContext
 
         def ENTONCES(self):
             return self.getToken(fukushuuParser.ENTONCES, 0)
@@ -1824,31 +1876,34 @@ class fukushuuParser(Parser):
             return self.getToken(fukushuuParser.SI, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def dummy_comandos(self):
-            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext,0)
 
 
         def sinotonces(self):
-            return self.getTypedRuleContext(fukushuuParser.SinotoncesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.SinotoncesContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_si
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitSi"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitSi" ):
                 return visitor.visitSi(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def si(self):
 
         localctx = fukushuuParser.SiContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_si)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 238
@@ -1862,7 +1917,7 @@ class fukushuuParser(Parser):
             self.state = 243
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == fukushuuParser.SINO:
+            if _la==fukushuuParser.SINO:
                 self.state = 242
                 localctx.el = self.sinotonces()
 
@@ -1879,12 +1934,12 @@ class fukushuuParser(Parser):
 
     class MientrasContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.err = None  # Token
-            self.op = None  # OperacionesContext
-            self.com = None  # Dummy_comandosContext
+            self.err = None # Token
+            self.op = None # OperacionesContext
+            self.com = None # Dummy_comandosContext
 
         def DPUNTOS(self):
             return self.getToken(fukushuuParser.DPUNTOS, 0)
@@ -1896,21 +1951,24 @@ class fukushuuParser(Parser):
             return self.getToken(fukushuuParser.MIENTRAS, 0)
 
         def operaciones(self):
-            return self.getTypedRuleContext(fukushuuParser.OperacionesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.OperacionesContext,0)
 
 
         def dummy_comandos(self):
-            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.Dummy_comandosContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_mientras
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitMientras"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitMientras" ):
                 return visitor.visitMientras(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def mientras(self):
 
@@ -1938,7 +1996,7 @@ class fukushuuParser(Parser):
 
     class FlujoContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -1948,27 +2006,30 @@ class fukushuuParser(Parser):
         def FIN_FLUJO(self):
             return self.getToken(fukushuuParser.FIN_FLUJO, 0)
 
-        def comandos(self, i: int = None):
+        def comandos(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.ComandosContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.ComandosContext, i)
+                return self.getTypedRuleContext(fukushuuParser.ComandosContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_flujo
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitFlujo"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFlujo" ):
                 return visitor.visitFlujo(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def flujo(self):
 
         localctx = fukushuuParser.FlujoContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_flujo)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 253
@@ -1982,11 +2043,7 @@ class fukushuuParser(Parser):
                 self.state = 257 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & (
-                                        (1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (
-                                    1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (
-                            1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (
-                    1 << fukushuuParser.MOSTRAR))) != 0)):
+                if not ((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << fukushuuParser.LEER) | (1 << fukushuuParser.AGREGAR_A) | (1 << fukushuuParser.PARA) | (1 << fukushuuParser.MIENTRAS) | (1 << fukushuuParser.SI) | (1 << fukushuuParser.CAMBIAR_VALOR_A) | (1 << fukushuuParser.MOSTRAR))) != 0)):
                     break
 
             self.state = 259
@@ -2001,13 +2058,13 @@ class fukushuuParser(Parser):
 
     class DeclaracionContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.tipo = None  # Token
-            self.nombre = None  # Token
-            self.filas = None  # Token
-            self.columnas = None  # Token
+            self.tipo = None # Token
+            self.nombre = None # Token
+            self.filas = None # Token
+            self.columnas = None # Token
 
         def TIPO(self):
             return self.getToken(fukushuuParser.TIPO, 0)
@@ -2054,7 +2111,7 @@ class fukushuuParser(Parser):
         def MATRIZ_CADENA(self):
             return self.getToken(fukushuuParser.MATRIZ_CADENA, 0)
 
-        def INT(self, i: int = None):
+        def INT(self, i:int=None):
             if i is None:
                 return self.getTokens(fukushuuParser.INT)
             else:
@@ -2063,17 +2120,20 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_declaracion
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitDeclaracion"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitDeclaracion" ):
                 return visitor.visitDeclaracion(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def declaracion(self):
 
         localctx = fukushuuParser.DeclaracionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_declaracion)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 261
@@ -2153,7 +2213,7 @@ class fukushuuParser(Parser):
             self.state = 288
             self._errHandler.sync(self)
             _la = self._input.LA(1)
-            if _la == fukushuuParser.INT:
+            if _la==fukushuuParser.INT:
                 self.state = 285
                 localctx.filas = self.match(fukushuuParser.INT)
                 self.state = 286
@@ -2172,7 +2232,7 @@ class fukushuuParser(Parser):
 
     class VariablesContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
@@ -2182,27 +2242,30 @@ class fukushuuParser(Parser):
         def FIN_VARIABLES(self):
             return self.getToken(fukushuuParser.FIN_VARIABLES, 0)
 
-        def declaracion(self, i: int = None):
+        def declaracion(self, i:int=None):
             if i is None:
                 return self.getTypedRuleContexts(fukushuuParser.DeclaracionContext)
             else:
-                return self.getTypedRuleContext(fukushuuParser.DeclaracionContext, i)
+                return self.getTypedRuleContext(fukushuuParser.DeclaracionContext,i)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_variables
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitVariables"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitVariables" ):
                 return visitor.visitVariables(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def variables(self):
 
         localctx = fukushuuParser.VariablesContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_variables)
-        self._la = 0  # Token type
+        self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 290
@@ -2216,7 +2279,7 @@ class fukushuuParser(Parser):
                 self.state = 294 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
-                if not (_la == fukushuuParser.TIPO):
+                if not (_la==fukushuuParser.TIPO):
                     break
 
             self.state = 296
@@ -2231,10 +2294,10 @@ class fukushuuParser(Parser):
 
     class NombreProgramaContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
-            self.nombre = None  # Token
+            self.nombre = None # Token
 
         def NOMBRE_PROGRAMA(self):
             return self.getToken(fukushuuParser.NOMBRE_PROGRAMA, 0)
@@ -2245,11 +2308,14 @@ class fukushuuParser(Parser):
         def getRuleIndex(self):
             return fukushuuParser.RULE_nombrePrograma
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitNombrePrograma"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitNombrePrograma" ):
                 return visitor.visitNombrePrograma(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def nombrePrograma(self):
 
@@ -2271,30 +2337,33 @@ class fukushuuParser(Parser):
 
     class InicioContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def nombrePrograma(self):
-            return self.getTypedRuleContext(fukushuuParser.NombreProgramaContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.NombreProgramaContext,0)
 
 
         def variables(self):
-            return self.getTypedRuleContext(fukushuuParser.VariablesContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.VariablesContext,0)
 
 
         def flujo(self):
-            return self.getTypedRuleContext(fukushuuParser.FlujoContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.FlujoContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_inicio
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitInicio"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitInicio" ):
                 return visitor.visitInicio(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def inicio(self):
 
@@ -2318,22 +2387,25 @@ class fukushuuParser(Parser):
 
     class Start_ruleContext(ParserRuleContext):
 
-        def __init__(self, parser, parent: ParserRuleContext = None, invokingState: int = -1):
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
             super().__init__(parent, invokingState)
             self.parser = parser
 
         def inicio(self):
-            return self.getTypedRuleContext(fukushuuParser.InicioContext, 0)
+            return self.getTypedRuleContext(fukushuuParser.InicioContext,0)
 
 
         def getRuleIndex(self):
             return fukushuuParser.RULE_start_rule
 
-        def accept(self, visitor: ParseTreeVisitor):
-            if hasattr(visitor, "visitStart_rule"):
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitStart_rule" ):
                 return visitor.visitStart_rule(self)
             else:
                 return visitor.visitChildren(self)
+
+
+
 
     def start_rule(self):
 
@@ -2350,3 +2422,8 @@ class fukushuuParser(Parser):
         finally:
             self.exitRule()
         return localctx
+
+
+
+
+
